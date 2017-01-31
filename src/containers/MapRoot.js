@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import MyMap from './MyMap'
+//import MyMap from './MyMap'
+import D3Map from './D3Map'
 import DevTools from './DevTools'
 import { Provider } from 'react-redux'
 
@@ -12,7 +13,7 @@ class MapRoot extends Component {
 		return (
 			<Provider store = {this.props.store}>
 				<div>
-					<MyMap/>
+					<D3Map/>
 					<DevTools/>
 				</div>
 			</Provider>

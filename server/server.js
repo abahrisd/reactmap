@@ -16,19 +16,31 @@ webSocketServer.on('connection', function(ws) {
 
 	console.log('setting connection!');
 
-	let id = 1;
 	setInterval(()=>{
-		for (let i = 0; i < 10/*00*/; i++){
+		let features = [];
+		for (let i = 0; i < 100; i++){
 
-			const coordObj = {
-				lat: getRandomArbitrary(-90, 90),
-				lng: getRandomArbitrary(-180, 180),
-				key: id++
-			}
+			const featureObj = {
+				"type": "Feature",
+				"properties": {
+					"text": "this is a Point!!!"
+				},
+				"geometry": {
+					"type": "Point",
+					"coordinates": [getRandomArbitrary(-180, 180), getRandomArbitrary(-84, 84)]
+				}
+			};
 
-			ws.send(coordObj);
+			features.push(featureObj);
 		}
-	}, 6000);
+
+		let response = {
+			features,
+			"type": "FeatureCollection"
+		};
+
+		ws.send(JSON.stringify(response));
+	}, 600);
 
 	ws.on('close', function() {
 		console.log('connection closed');

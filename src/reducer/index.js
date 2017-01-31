@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux'
-import dataReceived from './dataReceived'
-
+import websocket from './websocket'
 
 export default combineReducers({
-	dataReceived
+	websocket
 })

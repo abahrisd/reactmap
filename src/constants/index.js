@@ -1,1 +1,7 @@
-export const DATA_RECEIVED = 'DATA_RECEIVED'
+export const START = '_START'
+export const SUCCESS = '_SUCCESS'
+export const OPEN = '_OPEN'
+export const CLOSE = '_CLOSE'
+export const RECEIVE = '_RECEIVE'
+export const FAIL = '_FAIL'
+export const WEB_SOCKET = 'WEB_SOCKET'
